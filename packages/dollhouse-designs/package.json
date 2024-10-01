@@ -1,0 +1,13 @@
+{
+  "name": "dollhouse-designs",
+  "version": "1.1.0",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "echo Building dollhouse-designs",
+    "test": "echo Testing dollhouse-designs"
+  },
+  "keywords": ["vue", "react", "ui", "components", "hounfour"],
+  "author": "ordieboi",
+  "license": "MIT",
+  "description": "Hounfour's component library"
+}
