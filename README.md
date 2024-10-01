@@ -1,5 +1,5 @@
-# Hounfour
-Hounfour is a modular component library designed for Vue and React applications. This repository organizes components in a structured way, facilitating development, testing, and documentation through Storybook.
+# Loa's Library
+The dollhouse-designs package is a modular component library designed for Vue and React applications. This repository organizes components in a structured way, facilitating development, testing, and documentation through Storybook.
 
 ## Table of Contents
 - [Installation](#installation)
