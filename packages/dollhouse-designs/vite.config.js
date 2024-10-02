@@ -1,15 +1,15 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import reactRefresh from '@vitejs/plugin-react-refresh';
+import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 export default defineConfig({
-  plugins: [vue(), reactRefresh()],
+  plugins: [vue(), react()],
   build: {
     lib: {
       entry: {
-        react: resolve(__dirname, 'src/components/index.react.ts'),
-        vue: resolve(__dirname, 'src/components/index.vue.ts'),
+        react: resolve(__dirname, 'src/components/react-index.ts'),
+        vue: resolve(__dirname, 'src/components/vue-index.ts'),
       },
       name: 'DollhouseDesigns',
       fileName: (format) => `dollhouse-designs.${format}.js`,
