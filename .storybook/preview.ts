@@ -1,21 +1,13 @@
 import { Preview } from '@storybook/vue3';
+import { Preview as ReactPreview } from '@storybook/react';
+import '../packages/dollhouse-designs/src/components/styles/button.css';
+import '../packages/dollhouse-designs/src/components/styles/header.css';
+import '../packages/dollhouse-designs/src/components/styles/page.css';
 
-const preview: Preview = {
+// Export a single preview combining both Vue and React previews
+const preview: Preview & ReactPreview = {
   decorators: [
-    (_, { parameters }) => {
-      // 👇 Make it configurable by reading from parameters
-      const { pageLayout } = parameters;
-      switch (pageLayout) {
-        case 'page':
-          // Your page layout is probably a little more complex than this ;)
-          return { template: '<div class="page-layout"><story/></div>' };
-        case 'page-mobile':
-          return { template: '<div class="page-mobile-layout"><story/></div>' };
-        default:
-          // In the default case, don't apply a layout
-          return { template: '<story/>' };
-      }
-    },
+    // Add global decorators here if needed
   ],
   parameters: {
     controls: {

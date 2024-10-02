@@ -15,7 +15,8 @@ function getAbsolutePath(value: string) {
 /** @type { StorybookConfig } */
 const config: StorybookConfig = {
   framework: {
-    name: '@storybook/vue3-vite',
+    // name: '@storybook/vue3-vite',
+    name: '@storybook/react-vite',
     options: {
       // Additional options can be specified here if needed
     },

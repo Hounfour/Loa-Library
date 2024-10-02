@@ -24,25 +24,19 @@ export default meta;
 export const Primary = {
   args: {
     primary: true,
-    secondary: false,
-    danger: false,
     label: 'Button',
   },
 };
 
 export const Secondary = {
   args: {
-    primary: false,
     secondary: true,
-    danger: false,
     label: 'Button',
   },
 };
 
 export const Danger = {
   args: {
-    primary: false,
-    secondary: false,
     danger: true,
     label: 'Button',
   },
