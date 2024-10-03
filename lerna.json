@@ -2,8 +2,8 @@
   "packages": [
     "packages/*"
   ],
+  "version": "independent",
   "npmClient": "npm",
-  "useWorkspaces": true,
   "command": {
     "publish": {
       "message": "chore(release): publish %s"

@@ -8,31 +8,14 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".", // Base URL for module resolution
+    "baseUrl": ".",
     "paths": {
-      "@hf-react/*": ["packages/dollhouse-designs/src/components/react/*"],
-      "@hf-vue/*": ["packages/dollhouse-designs/src/components/vue/*"],
-      "@/*": ["src/*"] // For shared components in src directory
+      "@/*": ["packages/*"]
     },
     "types": ["@types/node", "@vue/test-utils", "@types/jest"]
   },
   "include": [
-    "src/types/*.d.ts",
-
-    // React components
-    "src/react-components/src/**/*.ts", 
-    "src/react-components/src/**/*.tsx", 
-    "src/react-components/tests/**/*.ts", 
-    "src/react-components/tests/**/*.tsx",
-
-    // Vue components
-    "packages/dollhouse-designs/src/components/vue/**/*.ts", 
-    "packages/dollhouse-designs/src/components/vue/**/*.vue", 
-    "packages/dollhouse-designs/src/components/vue/tests/**/*.ts", 
-    "packages/dollhouse-designs/src/components/vue/tests/**/*.vue",
-
-    // Optional: include types in the dollhouse-designs package if needed
-    "packages/dollhouse-designs/src/types/*.d.ts"
+    "packages/**/*",
   ],
   "exclude": ["node_modules"]
 }
