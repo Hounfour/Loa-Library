@@ -2,6 +2,9 @@
   "name": "@hounfour/monorepo",
   "main": "index.js",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "workspaces": [
     "packages/*"

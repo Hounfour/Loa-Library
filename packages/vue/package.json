@@ -2,6 +2,9 @@
   "name": "@hounfour/dollhouse-designs-vue",
   "version": "1.0.5",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.es.js",
   "exports": {
     ".": "./src/index.ts",
@@ -30,5 +33,5 @@
     "vue": "^3.5.10",
     "vue-router": "^4.4.5"
   },
-  "gitHead": "7bde299748990ee3140a853c966bed8abf23b1f6"
+  "gitHead": "be755f6636dd38fe7b28ddfbc5cc20d133fa68a3"
 }

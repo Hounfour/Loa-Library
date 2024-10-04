@@ -2,6 +2,9 @@
   "name": "@hounfour/styles",
   "version": "1.0.5",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.css",
   "exports": {
     ".": "./src/index.css",
@@ -20,5 +23,5 @@
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13"
   },
-  "gitHead": "7bde299748990ee3140a853c966bed8abf23b1f6"
+  "gitHead": "be755f6636dd38fe7b28ddfbc5cc20d133fa68a3"
 }
