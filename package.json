@@ -1,6 +1,6 @@
 {
   "name": "@hounfour/monorepo",
-  "private": true,
+  "private": false,
   "main": "index.js",
   "type": "module",
   "workspaces": [

@@ -28,5 +28,6 @@
   "peerDependencies": {
     "vue": "^3.5.10",
     "vue-router": "^4.4.5"
-  }
+  },
+  "gitHead": "fc090e768146e2e25b2d39a6011d92a3eab8dd14"
 }
