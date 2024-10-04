@@ -1,4 +1,5 @@
 {
+  "name": "@hounfour/monorepo",
   "private": true,
   "main": "index.js",
   "type": "module",

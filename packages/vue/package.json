@@ -1,7 +1,7 @@
 {
   "name": "@hounfour/dollhouse-designs-vue",
   "version": "1.0.0",
-  "main": "dist/index.es.ts",
+  "main": "dist/index.es.js",
   "exports": {
     ".": "./src/index.ts",
     "./*": "./src/*"
