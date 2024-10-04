@@ -1,34 +1,58 @@
-.button {
-  display: inline-block;
+.btn {
+  display: inline-flex;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
   border: 0;
-  border-radius: 3em;
+  border-radius: 2em;
   font-weight: 700;
   line-height: 1;
+  padding: 10px 20px;
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-.button-primary {
+.btn-primary {
   background-color: #1ea7fd;
   color: white;
 }
-.button-secondary {
+.btn-secondary {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
   background-color: transparent;
   color: #333;
 }
-.button-danger {
+.btn-danger {
   background-color: #fd1e1e;
   color: white;
 }
-.button-small {
+.btn-small {
   padding: 10px 16px;
   font-size: 12px;
 }
-.button-medium {
+.btn-medium {
   padding: 11px 20px;
   font-size: 14px;
 }
-.button-large {
+.btn-large {
   padding: 12px 24px;
   font-size: 16px;
 }
+.btn-full-width {
+  width: 100%;
+}
+/* .btn-toggle {
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 0;
+}
+.btn-toggle:hover {
+  background-color: #c7710025;
+} */
+.icon-left {
+  margin-right: 8px;
+}
+.icon-right {
+  margin-left: 8px;
+}
+/* .toggle-icon {
+  margin-left: 8px;
+} */

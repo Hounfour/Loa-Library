@@ -1,46 +1,72 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style">
-    {{ label }}
+  <button :class="['btn', buttonType, buttonSize, { 'btn-full-width': fullWidth }]" :disabled="isDisabled"
+    @click="onClick">
+    <template v-if="isLoading">
+      <span>Loading...</span>
+    </template>
+    <template v-else>
+      <i v-if="icon" :class="iconClass"></i>
+      <slot>{{ label }}</slot>
+    </template>
   </button>
 </template>
 
-<script setup lang="ts">
-import { computed } from 'vue';
-import '../../styles/src/components/button.css';
+<script lang="ts">
+import { defineComponent } from 'vue';
+import '../../styles/src/components/button.css'
 
-interface Props {
-  label: string;
-  primary?: boolean;
-  secondary?: boolean;
-  danger?: boolean;
-  size?: 'small' | 'medium' | 'large';
-  backgroundColor?: string;
-}
-
-// Define the props for the component
-const props = defineProps<Props>();
-
-// Define emits for the component
-const emit = defineEmits<{
-  (e: 'click'): void;
-}>();
-
-// Compute the classes for the button based on props
-const classes = computed(() => ({
-  'button': true,
-  'button-primary': props.primary && !props.danger && !props.secondary,
-  'button-secondary': props.secondary && !props.primary && !props.danger,
-  'button-danger': props.danger && !props.primary && !props.secondary,
-  [`button-${props.size || 'medium'}`]: true,
-}));
-
-// Compute the style for the button based on the background color prop
-const style = computed(() => ({
-  backgroundColor: props.backgroundColor,
-}));
-
-// Handle button click and emit the click event
-const onClick = () => {
-  emit('click');
-};
+export default defineComponent({
+  name: 'Button',
+  props: {
+    label: {
+      type: String,
+      required: false,
+    },
+    type: {
+      type: String,
+      default: 'primary', // 'primary', 'secondary', 'danger'
+    },
+    size: {
+      type: String,
+      default: 'medium', // 'small', 'medium', 'large'
+    },
+    icon: {
+      type: String,
+      default: '', // Icon class for the button
+    },
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    fullWidth: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    buttonType() {
+      return `btn-${this.type}`;
+    },
+    buttonSize() {
+      return `btn-${this.size}`;
+    },
+    isDisabled() {
+      return this.disabled || this.isLoading;
+    },
+    iconClass() {
+      return this.icon ? `icon-${this.icon}` : '';
+    },
+  },
+  methods: {
+    onClick(event: MouseEvent) {
+      if (!this.isDisabled) {
+        this.$emit('click', event);
+      }
+    },
+  },
+});
 </script>

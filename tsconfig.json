@@ -15,7 +15,7 @@
     "types": ["@types/node", "@vue/test-utils", "@types/jest"]
   },
   "include": [
-    "packages/**/*",
+    "packages/**/*", "stories/react-components/Button.stories.tsx", "stories/react-components/Checkbox.stories.tsx", "stories/react-components/Dropdown.stories.tsx", "stories/vue-components/Header.stories.js", "stories/vue-components/Page.stories.js", "stories/vue-components/Button.stories.ts", "stories/vue-components/Checkbox.stories.ts", "stories/vue-components/Dropdown.stories.ts",
   ],
   "exclude": ["node_modules"]
 }

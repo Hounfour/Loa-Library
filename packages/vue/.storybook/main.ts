@@ -9,7 +9,7 @@ function getAbsolutePath(value: string) {
 }
 
 const config: import('@storybook/vue3-vite').StorybookConfig = {
-  stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ['../../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     getAbsolutePath('@storybook/addon-onboarding'),
     getAbsolutePath('@storybook/addon-links'),

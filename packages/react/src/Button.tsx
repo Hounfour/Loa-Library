@@ -1,40 +1,56 @@
 import React from 'react';
 import '../../styles/src/components/button.css';
 
-interface ButtonProps {
-  label: string;
-  primary?: boolean;
-  secondary?: boolean;
-  danger?: boolean;
+interface Props {
+  label?: string;
+  type?: 'primary' | 'secondary' | 'danger';
   size?: 'small' | 'medium' | 'large';
-  backgroundColor?: string;
-  onClick?: () => void;
+  icon?: string;
+  isLoading?: boolean;
+  disabled?: boolean;
+  fullWidth?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<Props> = ({
   label,
-  primary,
-  secondary,
-  danger,
+  type = 'primary',
   size = 'medium',
-  backgroundColor,
+  icon,
+  isLoading = false,
+  disabled = false,
+  fullWidth = false,
   onClick,
 }) => {
-  const classes = [
-    'button',
-    primary && 'button-primary',
-    secondary && 'button-secondary',
-    danger && 'button-danger',
-    `button-${size}`,
-  ]
-    .filter(Boolean)
-    .join(' ');
+  // Compute button classes
+  const buttonType = `btn-${type}`;
+  const buttonSize = `btn-${size}`;
+  const isDisabled = disabled || isLoading;
+  const iconClass = icon ? `icon-${icon}` : '';
 
-  const style = backgroundColor ? { backgroundColor } : {};
+  // Handle button click
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (!isDisabled && onClick) {
+      onClick(event);
+    }
+  };
 
   return (
-    <button type="button" className={classes} style={style} onClick={onClick}>
-      {label}
+    <button
+      className={`btn ${buttonType} ${buttonSize} ${
+        fullWidth ? 'btn-full-width' : ''
+      }`}
+      disabled={isDisabled}
+      onClick={handleClick}
+    >
+      {isLoading ? (
+        <span>Loading...</span>
+      ) : (
+        <>
+          {icon && <i className={iconClass}></i>}
+          {label}
+        </>
+      )}
     </button>
   );
 };

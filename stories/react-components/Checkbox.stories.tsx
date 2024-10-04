@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import Checkbox from '../Checkbox';
+import Checkbox from '../../packages/react/src/Checkbox';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 

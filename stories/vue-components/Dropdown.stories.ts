@@ -1,26 +1,44 @@
 import { Meta, StoryFn } from '@storybook/vue3';
-import hf_dropdown from '../Dropdown.vue';
+import Dropdown from '../Dropdown.vue';
+
+interface Props {
+  label: string;
+  options: string[];
+}
 
 // Define metadata for the component story
-const meta: Meta<typeof hf_dropdown> = {
-  title: 'Components/Vue/Dropdown',
-  component: hf_dropdown,
+const meta: Meta<typeof Dropdown> = {
+  title: 'Dollhouse Designs/Vue/Dropdown',
+  component: Dropdown,
+  tags: ['autodocs'],
+  argTypes: {
+    options: {
+      control: 'array',
+      description: 'Array of options to display in the dropdown.',
+    },
+    label: {
+      control: 'text',
+      description: 'Label to display when no option is selected.',
+    },
+    onOptionSelected: {
+      action: 'option-selected',
+      description: 'Event triggered when an option is selected.',
+    },
+  },
 };
 
 export default meta;
 
 // Template function for the dropdown component
-const Template: StoryFn<typeof hf_dropdown> = (args) => ({
-  components: { hf_dropdown },
+const Template: StoryFn<Props> = (args) => ({
+  components: { Dropdown },
   setup() {
-    return { args };
-  },
-  template: '<hf_dropdown v-bind="args" @option-selected="onOptionSelected" />',
-  methods: {
-    onOptionSelected(option: string) {
+    const onOptionSelected = (option: string) => {
       console.log('Selected option:', option); // Handle the selected option
-    },
+    };
+    return { args, onOptionSelected };
   },
+  template: '<Dropdown v-bind="args" @option-selected="onOptionSelected" />',
 });
 
 // Default dropdown story
