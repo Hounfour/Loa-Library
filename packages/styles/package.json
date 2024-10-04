@@ -1,6 +1,6 @@
 {
   "name": "@hounfour/styles",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.css",
   "exports": {
     ".": "./src/index.css",
