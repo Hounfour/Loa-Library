@@ -1,6 +1,7 @@
 {
   "name": "@hounfour/monorepo",
   "main": "index.js",
+  "private": false,
   "type": "module",
   "workspaces": [
     "packages/*"

@@ -1,6 +1,7 @@
 {
   "name": "@hounfour/styles",
   "version": "1.0.3",
+  "private": false,
   "main": "dist/index.css",
   "exports": {
     ".": "./src/index.css",
@@ -19,5 +20,5 @@
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13"
   },
-  "gitHead": "6679ac60d8f11adc2931e4058a53fe395541b03e"
+  "gitHead": "5893c562911f35a7c217a9735fe6f2ea968e95e6"
 }
