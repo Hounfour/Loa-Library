@@ -22,30 +22,45 @@ This will launch Storybook in your browser at http://localhost:6006.
 The project follows a structured directory layout:
 ```
 Hounfour/
-├── .storybook/                    # Storybook configuration files
-│   ├── main.ts                    # Main configuration file
-│   └── preview.ts                 # Preview configuration file
-├── dist/                          # Distribution files for production
-├── node_modules/                 # Installed dependencies
-├── packages/                      # Package-specific directories
-│   └── dollhouse-designs/         # Main component package
-│       ├── dist/                  # Compiled distribution of components
-│       ├── src/                   # Source files for components
-│       │   ├── components/        # Vue and React components
-│       │   │   ├── react/         # React components directory
-│       │   │   └── vue/           # Vue components directory
-│       │   ├── styles/            # CSS styles for components
-│       │   └── types/             # Type definitions
-│       ├── package.json           # Package configuration
-│       └── vite.config.js         # Vite configuration file
-├── stories/                       # Storybook stories
-│   ├── assets/                    # Asset files for stories
+├── packages/                      # Packages directory containing individual libraries
+| ***@hounfour/dollhouse-designs-react***
+│   └── react/                     # React component library package
+|   |   ├── .storybook/            # React Storybook configuration files
+│   |   |   ├── main.ts            # React configuration file
+│   |   |   └── preview.ts         # React Preview configuration file
+│   |   ├── dist/                  # Compiled production build for components
+│   |   ├── src/                   # Source files / all components
+│   |   │   └── index.ts           # React Entry point
+│   |   ├── package.json           # Package configuration for this component library
+│   |   └── vite.config.js         # Vite configuration for the react component library
+| ***@hounfour/styles***
+|   └── styles/                    # CSS styling for all packages
+|   |   ├── dist/                  # Compiled production build for components
+│   |   ├── src/                   # Source files for all components
+│   |   │   └── index.ts           # Vue Entry point
+│   |   ├── package.json           # Package configuration for this component library
+│   |   └── vite.config.js         # Vite configuration for the component library
+| ***@hounfour/dollhouse-designs-vue***
+|   └── vue/                       # Vue component library package
+|   |   ├── dist/                  # Compiled production build for components
+│   |   ├── src/                   # Source files for all components
+│   |   │   └── base/              # Base styles
+│   |   │   └── components/        # Component styles
+│   |   │   └── layouts/           # Layout styles
+│   |   │   └── themes/            # Theme styles
+│   |   │   └── utils/             # Styling for the utility package
+│   |   │   └── index.ts           # Styles Entry point
+│   |   ├── package.json           # Package configuration for this component library
+│   |   └── vite.config.js         # Vite configuration for the component library
+├── stories/                       # Storybook stories organized by components
+│   ├── assets/                    # Static assets used in stories
 │   ├── react-components/          # React component stories
 │   └── vue-components/            # Vue component stories
-├── .gitignore                     # Git ignore file
-├── LICENSE                        # License file
-├── package.json                   # Root package configuration
-└── tsconfig.json                  # TypeScript configuration
+├── .gitignore                     # Files and directories to be ignored by Git
+├── LICENSE                        # License information for the repository
+├── package.json                   # Root-level package configuration
+├── tsconfig.json                  # TypeScript configuration
+└── README.md                      # Project documentation (this file)
 ```
 
 ## Contributing
